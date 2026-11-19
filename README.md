@@ -5,12 +5,20 @@ My CachyOS + Hyprland setup: sharp, square, **Catppuccin Mocha** everywhere.
 ## Install
 
 ```sh
-git clone https://github.com/ItsArtsign/Dotfiles ~/.dotfiles && ~/.dotfiles/install.sh
+git clone https://github.com/ItsArtsign/Dotfiles ~/.dotfiles && ~/.dotfiles/install.sh && ~/.dotfiles/deps.sh
 ```
 
-The script asks before doing anything, backs up any file it would overwrite to
-`~/.dotfiles-backup/<date>/`, then copies everything in `home/` into `$HOME`.
-It does **not** install packages.
+1. **`install.sh`** asks first, backs up any file it would overwrite to
+   `~/.dotfiles-backup/<date>/`, then copies everything in `home/` into `$HOME`.
+2. **`deps.sh`** (Arch / CachyOS) installs and starts everything the configs use:
+   - all packages via pacman (`--needed`, so nothing gets reinstalled), plus `librewolf-bin` from the AUR
+     (builds `yay` first if you have no AUR helper)
+   - the macOS cursor (downloaded and checksum-verified) and GTK cursor/dark-mode settings
+   - PipeWire audio services, and SDDM as the login screen if you don't already have one
+   - Neovim plugins, and optionally fish as your default shell
+   - if you're already in Hyprland: reloads it and starts Noctalia + Waybar
+
+Both scripts are safe to re-run.
 
 ## What's included
 
@@ -28,10 +36,7 @@ It does **not** install packages.
 | `.config/gtk-*`, `xsettingsd`, `kcminputrc`, `.icons/` | GTK theme, cursor (`macOS-hypr`, 24) |
 | `.config/mimeapps.list` | Default apps (LibreWolf as browser) |
 
-## Packages you'll want
+## Notes
 
-`hyprland uwsm waybar rofi kitty fish starship neovim librewolf noctalia-shell xsettingsd`
-plus the `macOS-hypr` cursor theme and a Catppuccin Mocha GTK theme.
-Wallpapers aren't included. Set your own in Noctalia.
-
+Wallpapers aren't included. Set your own in Noctalia (Super + Shift + W).
 The NVIDIA lines in `.config/uwsm/env` are for NVIDIA GPUs. Remove them on AMD/Intel.
