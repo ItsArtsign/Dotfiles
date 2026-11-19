@@ -1,0 +1,3 @@
+-- Environment variables live in ~/.config/uwsm/env (this session is launched via UWSM).
+-- That includes the NVIDIA vars (GBM_BACKEND, __GLX_VENDOR_LIBRARY_NAME,
+-- LIBVA_DRIVER_NAME, NVD_BACKEND). Don't duplicate them here. See ~/.agents/LOG.md.

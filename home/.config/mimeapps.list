@@ -1,0 +1,13 @@
+
+[Default Applications]
+x-scheme-handler/jetbrains=jetbrainsd.desktop
+text/html=librewolf.desktop
+application/xhtml+xml=librewolf.desktop
+x-scheme-handler/chrome=librewolf.desktop
+x-scheme-handler/http=librewolf.desktop
+x-scheme-handler/https=librewolf.desktop
+x-scheme-handler/about=librewolf.desktop
+x-scheme-handler/unknown=librewolf.desktop
+x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/figma=figma-linux.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
